@@ -1,0 +1,66 @@
+<configuration>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+<!--    <appender name="markersift" class="ch.qos.logback.classic.sift.SiftingAppender">-->
+<!--        <discriminator class="com.logger.demo.MarkerDiscriminator">-->
+<!--            <key>importance</key>-->
+<!--            <defaultValue>not_important</defaultValue>-->
+<!--        </discriminator>-->
+<!--        <sift>-->
+<!--            <appender name="file-${importance}" class="ch.qos.logback.core.FileAppender">-->
+<!--                <file>tmp/logback-${importance}.log</file>-->
+<!--                <append>false</append>-->
+<!--                <immediateFlush>true</immediateFlush>-->
+<!--                <encoder>-->
+<!--                    <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+<!--                </encoder>-->
+<!--            </appender>-->
+<!--        </sift>-->
+<!--    </appender>-->
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>tmp/allLogs.log</file>
+        <append>true</append>
+        <!-- set immediateFlush to false for much higher logging throughput -->
+        <immediateFlush>true</immediateFlush>
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SRE" class="ch.qos.logback.core.FileAppender">
+<!--        <param name="file" value="SRElogs.log" />-->
+
+        <file>tmp/SRE.log</file>
+        <append>true</append>
+        <immediateFlush>true</immediateFlush>
+
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+            <evaluator class="ch.qos.logback.classic.boolex.OnMarkerEvaluator">
+                <marker>IMPORTANT</marker>
+            </evaluator>
+            <onMismatch>DENY</onMismatch>
+            <OnMatch>NEUTRAL</OnMatch>
+        </filter>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+
+
+    <logger name="com.logger.demo">
+        <appender-ref ref="console" />
+    </logger>
+
+    <root level="info">
+        <appender-ref ref="SRE" />
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>

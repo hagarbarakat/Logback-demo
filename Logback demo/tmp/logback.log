@@ -1,0 +1,4 @@
+11:46:26.698 [main] INFO  com.logger.demo.LoggerDemo - This is an INFO level log message!
+11:46:26.700 [main] ERROR com.logger.demo.LoggerDemo - This is an ERROR level log message!
+11:48:26.797 [main] INFO  com.logger.demo.LoggerDemo - This is an INFO level log message!
+11:48:26.799 [main] ERROR com.logger.demo.LoggerDemo - This is an ERROR level log message!

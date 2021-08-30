@@ -1,0 +1,12 @@
+161  [main] INFO  com.logger.demo.LogbackMarker - This is a log message that is not important!
+163  [main] WARN  com.logger.demo.LogbackMarker - This is a very important log message! added to SRE
+163  [main] WARN  com.logger.demo.LogbackMarker - test
+163  [main] ERROR com.logger.demo.LogbackMarker - add this error to SRE file!
+163  [main] INFO  com.logger.demo.LogbackMarker - END OF LogbackMarker FILE!
+142  [main] INFO  com.logger.demo.LoggerDemo - This is an INFO level log message!
+144  [main] ERROR com.logger.demo.LoggerDemo - This is an ERROR level log message!
+144  [main] INFO  com.logger.demo.LoggerDemo - END OF LoggerDemo FILE!
+144  [main] WARN  com.logger.demo.LoggerDemo - test loggerDemo
+151  [main] INFO  com.logger.testing.LogbackTest - This is an INFO level log message!
+154  [main] ERROR com.logger.testing.LogbackTest - This is an ERROR level log message! added to SRE file !!
+154  [main] INFO  com.logger.testing.LogbackTest - END OF LogbackTest FILE!

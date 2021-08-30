@@ -1,0 +1,4 @@
+15:39:37.274 [main] WARN  com.logger.demo.LogbackMarker - This is a very important log message! added to SRE
+15:39:37.274 [main] WARN  com.logger.demo.LogbackMarker - test
+15:42:15.532 [main] WARN  com.logger.demo.LoggerDemo - test loggerDemo
+15:42:40.194 [main] INFO  com.logger.testing.LogbackTest - This is an INFO level log message!
